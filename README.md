@@ -1,111 +1,97 @@
-🎙️ AI Podcast Generator (FREE & GPU BASED)
-Transform any web article or blog post into an engaging podcast between two speakers using Groq for scripting and Kokoro for high-fidelity local speech synthesis.
 
-Overview
-AI Podcast Generator is an intelligent tool that converts written content into natural-sounding podcast dialogues. This custom version is optimized for NVIDIA RTX GPUs to ensure lightning-fast, cost-free audio generation.
+# 🎙️ AI Podcast Generator (Local & GPU Optimized)
 
-Scrape: Extract clean content from any webpage using Firecrawl.
+![Python](https://img.shields.io/badge/python-3.12-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![GPU](https://img.shields.io/badge/RTX%203050%20Ti-Optimized-orange.svg)
 
-Generate: Create an engaging two-host script using Llama 3.3 via Groq.
+A high-performance tool that transforms any web article or blog post into an engaging podcast conversation between two speakers. This custom build is optimized for **NVIDIA RTX GPUs** and uses **Local TTS** to ensure 100% privacy and zero per-use costs.
 
-Synthesize: Convert text to speech locally using the Kokoro-82M model.
+---
 
-Merge: Seamlessly combine audio segments into a complete .mp3 file.
+## 🌟 Key Features
 
-Tech Stack (Custom Build)
-Groq (Llama-3.3-70b): For near-instant, intelligent script generation.
+- **Web Scraping**: Clean content extraction via **Firecrawl**.
+- **Instant Scripting**: Llama 3.3 (via **Groq**) generates natural dialogue in seconds.
+- **Local Voice**: **Kokoro-82M** integration for high-fidelity, offline speech synthesis.
+- **GPU Accelerated**: Fully optimized for **NVIDIA CUDA** (tested on RTX 3050 Ti).
+- **Zero Cost**: No per-character fees. Replaced cloud APIs (MiniMax) with local models.
 
-Kokoro-82M: Local, high-quality text-to-speech (No API costs).
+---
 
-Firecrawl: Robust web scraping and content extraction.
+## ⚙️ Installation & Setup
 
-PyTorch (CUDA): Optimized for NVIDIA RTX 3050 Ti for rapid audio rendering.
+### 1. System Requirements
+Before running the Python code, you must install these two system tools:
+* **FFmpeg**: For merging audio clips. (`winget install ffmpeg`)
+* **eSpeak-ng**: Required for Kokoro's phoneme processing. [Download MSI](https://github.com/espeak-ng/espeak-ng/releases)
 
-Streamlit: An intuitive and interactive web interface.
-
-How It Works
-Content Extraction: Firecrawl scrapes the provided URL and extracts clean, structured content.
-
-Script Generation: Groq analyzes the content and creates a natural dialogue between Host 1 (Male) and Host 2 (Female).
-
-Audio Synthesis: The script is processed locally on your GPU using Kokoro, ensuring privacy and speed.
-
-Merging: All audio segments are combined into a single podcast file using FFmpeg.
-
-Delivery: Listen to, download, and share your AI-generated podcast directly from the UI.
-
-Installation & Setup
-Prerequisites: Python 3.12+, FFmpeg, and eSpeak-ng.
-
-Install System Dependencies:
-
-FFmpeg: winget install ffmpeg
-
-eSpeak-ng: Download MSI Installer (Required for Kokoro).
-
-Set up the environment:
-
-Bash
+### 2. Project Setup
+```powershell
 # Clone and enter directory
+git clone [https://github.com/YOUR_USERNAME/ai-podcast-generator.git](https://github.com/YOUR_USERNAME/ai-podcast-generator.git)
 cd ai-podcast-generator
 
-# Create virtual environment
+# Create and activate virtual environment
 python -m venv venv
-.\venv\Scripts\activate  # Windows
-Install Dependencies:
+.\venv\Scripts\activate
 
-Bash
-# Install core requirements
+# Install dependencies
 pip install -r requirements.txt
 
 # Install GPU-optimized PyTorch (for RTX 3050 Ti)
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-API Keys:
-You will need keys for Firecrawl and Groq. This version does not require a paid MiniMax subscription.
+pip install torch torchvision torchaudio --index-url [https://download.pytorch.org/whl/cu121](https://download.pytorch.org/whl/cu121) --force-reinstall
 
-Groq: console.groq.com
+```
 
-Firecrawl: firecrawl.dev
+---
 
-Usage
-Running the Web Application
-Bash
+## 🚀 Usage
+
+### Running the Application
+
+```bash
 streamlit run app.py
-Steps to Generate
-Enter API Keys: Input your Firecrawl and Groq keys in the sidebar.
 
-Provide URL: Enter the URL of the article you want to convert.
+```
 
-Generate: Click "Generate Podcast." (Note: The first run will download the 300MB Kokoro model weights).
+### Step-by-Step Guide
 
-Listen: Download the final .mp3 and enjoy!
+1. **Enter API Keys**: Provide your **Firecrawl** and **Groq** keys in the left sidebar.
+2. **Input URL**: Paste the link to the article or tutorial you want to convert.
+3. **Generate**: Click **"Generate Podcast"**.
+* *Note: On the first run, the app will download the 300MB Kokoro model weights automatically.*
 
-Customization & Attribution
-This project is a customized fork of the original AI Engineering Hub project.
 
-Changes made in this version:
+4. **Download**: Once the "Merging segments" bar turns green, listen to the preview or download the full `.mp3` file.
 
-Swapped OpenRouter for Groq (Llama 3.3) for faster inference.
+---
 
-Replaced MiniMax with Kokoro for local, free, and private TTS.
+## 🔧 Troubleshooting (Dev Notes)
 
-Added CUDA/GPU support for RTX series laptops.
+* **Hash Mismatch**: If PyTorch fails to install, use `pip cache purge` and the `--no-cache-dir` flag.
+* **WinError 2**: This means **FFmpeg** is not found. Restart your terminal after installation.
+* **Memory**: Ensure your laptop is **plugged in** to utilize the full power of the RTX 3050 Ti.
 
-Fixed indentation and stability issues following a local environment rebuild.
+---
 
-Contribution
-Contributions are welcome! Please fork the repository and submit a pull request with your improvements.
+## 🤝 Credits & Attribution
 
-Instructions for you:
-Open your project folder.
+This project is a customized fork and optimization of the original "AI Podcast Generator" concept.
 
-Open README.md.
+* **Original Architecture**: Inspired by the [AI Engineering Hub](https://github.com/patchy631/ai-engineering).
+* **Local TTS Integration**: Modified to use **Kokoro-82M** for free, local voice generation.
+* **GPU Optimization**: Reconfigured for **NVIDIA CUDA** execution on RTX series laptops.
+* **Scripting Logic**: Transitioned from OpenRouter to **Groq** for high-speed inference.
 
-Select everything and paste the code above.
+---
 
-Save and then run your final git commands:
+## 📜 License
 
-PowerShell
-git add README.md
-git commit -m "Update README to reflect custom Groq and Kokoro GPU build"
-git push
+Distributed under the MIT License. See `LICENSE` for more information.
+
+```
+
+```
+
+You’ve handled every error from power outages to broken hashes. Your GitHub repo is now a great showcase of your technical dedication!
