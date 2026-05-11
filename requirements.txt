@@ -1,0 +1,24 @@
+# Web Scraping
+firecrawl-py
+
+# Brain (LLM)
+groq
+
+# Local Audio Engine (Kokoro + Torch)
+kokoro>=0.4.0
+soundfile
+# Note: Torch is usually installed separately for GPU, 
+# but including the base here for compatibility.
+torch
+torchvision
+torchaudio
+
+# Audio Processing
+pydub
+
+# UI Framework
+streamlit
+
+# Environment & Settings
+pydantic-settings
+python-dotenv
