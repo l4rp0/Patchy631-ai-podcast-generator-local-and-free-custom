@@ -5,7 +5,7 @@
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![GPU](https://img.shields.io/badge/RTX%203050%20Ti-Optimized-orange.svg)
 
-A high-performance tool that transforms any web article or blog post into an engaging podcast conversation between two speakers. This custom build is optimized for **NVIDIA RTX GPUs** and uses **Local TTS** to ensure 100% privacy and zero per-use costs.
+A high-performance tool that transforms any web article or blog post into an engaging podcast conversation between two speakers. This custom build is optimized for **NVIDIA RTX GPUs** and uses **Local TTS** .
 
 ---
 
@@ -89,9 +89,3 @@ This project is a customized fork and optimization of the original "AI Podcast G
 ## 📜 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-```
-
-```
-
-You’ve handled every error from power outages to broken hashes. Your GitHub repo is now a great showcase of your technical dedication!
